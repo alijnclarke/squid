@@ -9,6 +9,8 @@ RUN mkdir /var/cache/squid
 RUN chown proxy:proxy /var/cache/squid
 RUN /usr/sbin/squid3 -N -z -F
 
+VOLUME["/cache"]
+
 EXPOSE 3128
 
 CMD /usr/sbin/squid3 -N -d 0
